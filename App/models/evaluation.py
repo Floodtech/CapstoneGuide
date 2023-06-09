@@ -3,7 +3,7 @@ from typing import Type
 from App.database import db
 
 class Evaluation(db.Model):
-    proposalId = db.Column(db.Integer, db.ForeignKey('proposal.id'))
+    proposalId = db.Column(db.Integer, db.ForeignKey('proposal.proposalId'))
     id = db.Column(db.Integer, primary_key=True)
     novelty = db.Column(db.Integer)
     relevance = db.Column(db.Integer)

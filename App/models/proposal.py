@@ -3,8 +3,9 @@ from datetime import datetime
 
 
 class Proposal(db.Model):
+    __tablename__ = 'proposal'
     proposalId = db.Column(db.Integer, primary_key=True)
-    studentId = db.Column(db.Integer, db.ForeignKey('student.id'))
+    studentId = db.Column(db.Integer, db.ForeignKey('student.studentId'))
     rubricId = db.Column(db.Integer, db.ForeignKey('rubric.id'))
     problem_desc = db.Column(db.String)
     solution_desc = db.Column(db.String)
